@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P1 - Exercise 1.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/p5.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise1-2/sketch.js</strong>. The sketch already contains the skeletons of 
+            the <code>setup()</code> and <code>draw()</code> functions, and another function called <code>star()</code>. You 
+            should recognise this function from an earlier practical. Read its JSDoc to understand what it does.</p>
+            <p>Your task is to create a falling star animation as shown in the video below. When the user clicks the mouse, a 
+                new star should appear at the mouse location. Each star should fall down the screen at a speed of 2 pixels per frame.
+            </p>
+            <p>Create a canvas of any size you like (at least 400px in height is recommended). Set the background to any colour you like. 
+                You will need to use arrays and <code>for</code> loops to achieve the output. You should also write at least 
+                one function to keep your code easy to read. If you need more guidance, see the hint below.</p>
+            <p>For an optional extension, make the stars fade as they fall (see the second video below). This extension has nothing 
+                to do with arrays but it is good problem solving practice. The fade effect looks best if you try to make the star fill colour 
+                gradually turn in to the background colour, rather than changing the alpha value of the fill. 
+            </p>
+            <p>When you are done, check your work using <a href="./check-exercise1-2.html">check-exercise1-2.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+            <p>Optional extension:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-2-ext.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will need two global arrays, one for the x coordinate of each star and one for the y coordinates. The arrays should 
+                        be empty to start with. This is the type of output that can only be achieved with arrays because you need to keep track 
+                        of an unknown number of x and y coordinates.
+                    </p>
+                    <p>Implement the <code>mouseClicked()</code> event function. Inside, <code>mouseClicked()</code>, add each mouse coordinate to 
+                    the appropriate array using <a href="https://www.w3schools.com/jsref/jsref_push.asp" target="_blank"><code>arrayName.push()</code></a>.</p>
+                    <p>In <code>draw()</code>, use a <code>for</code> loop to draw a star at each pair of coordinates stored in your arrays. Because 
+                    the number of elements stored in the arrays will increase each time the user clicks, use 
+                    <a href="https://www.w3schools.com/jsref/jsref_length_array.asp" target="_blank"><code>arrayName.length</code></a> in the <code>for</code> 
+                    loop test condition. You can see an example in the lecture slides. When this part of the exercise is implemented, check that the stars 
+                    appear in the right location on mouse click.</p>
+                    <p>To implement the falling effect, create a new function (to keep your code tidy!) and use a <code>for</code> loop to add 2 to each element 
+                    in the array that stores the y coordinates. Don't forget to call the function in <code>draw()</code> after the loop that draws the stars.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

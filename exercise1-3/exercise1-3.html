@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P1 - Exercise 1.3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/p5.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.3</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Create a "tail" for the mouse, as shown in the video below. The tail is created by saving the 
+                5 most recent mouse coordinates in arrays then using those array to draw circles at the saved coordinates. The circle at the most recent coordinates should 
+                be 20px in diameter. The circles should decrease in size by 2px from the second most recent coordinate to the oldest coordinate.
+            </p>
+            <p>Aim to separate the main tasks into functions for readability.</p>
+            <p>When you are done, check your work using <a href="./check-exercise1-3.html">check-exercise1-3.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will need two empty global array variables. One will store the mouse's x coordinates and one will store the y coordinates.</p>
+                    <p>There is no need to implement a mouse event function for this exercise. In <code>draw()</code>, add <code>mouseX</code> and <code>mouseY</code> 
+                    to the appropriate arrays. As the tail is created using the five most recent mouse locations, use an <code>if</code> statement to check if the arrays contain more 
+                    than 5 elements. If so, remove the oldest. There are two main ways to achieve this: you can either add new coordinates to the end of the arrays and 
+                    remove the first element, or you can add new elements at the beginning of the arrays and remove the last element. Look at the documentation for the array methods linked below.</p>
+                    <p>Use a <code>for</code> loop to draw circles at the saved coordinates. You will need to do a little maths to figure out the diameter for each circle. Try 
+                    to write this maths as a calculation using the index of the coordinate in the loop. If you add new coordinates to the end of each array:</p>
+                    <ul>
+                        <li>The circle at the coordinates stored at <code>arrayName.length - 1</code> should be 20px in diameter.</li>
+                        <li>The circle at the coordinates stored at <code>arrayName.length - 2</code> should be 18px in diameter.</li>
+                        <li>The circle at the coordinates stored at <code>arrayName.length - 3</code> should be 16px in diameter.</li>
+                        <li>...and so on...</li>
+                    </ul>
+                    <p>Some useful documentation:</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_pop.asp" target="_blank"><code>arrayName.pop()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_shift.asp" target="_blank"><code>arrayName.shift()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_push.asp" target="_blank"><code>arrayName.push()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_unshift.asp" target="_blank"><code>arrayName.unshift()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

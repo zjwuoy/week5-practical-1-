@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P1 - Exercise 1.1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/p5.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.1</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Add <code>setup()</code> and <code>draw()</code> to <strong>exercise1-1/sketch.js</strong> and create a 400px by 400px canvas.</p>
+            <p>Create two arrays containing the values given in the table below:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><code>diameters</code></th>
+                        <th><code>colourVals</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>360</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>280</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>150</td>
+                        <td>255</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Use the arrays to draw concentric circles with different fill colours in the middle of your canvas. 
+                You can use the <code>colourVals</code> array to set the value of one or more 
+                colour channels.
+            </p>
+            <p>When the user clicks their mouse, remove the last element of the <code>colourVals</code> array and 
+            insert the removed value at the beginning of the array. For example, the first time the mouse is clicked, the last element (255) 
+            will be removed and inserted at the beginning so the <code>colourVals</code> array becomes <code>[ 255, 60, 140, 180]</code>.</p>
+            <p>When you are done, check your work using <a href="./check-exercise1-1.html">check-exercise1-1.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>Both arrays should be saved as <em>global</em> variables. Because you know the values that will be stored in 
+                    the arrays, they can be populated at the same time as they are created. See the lecture slides for an example.</p>
+                    <p>Although it is possible to draw the circles without using a loop, you should ideally use a <code>for</code> loop to iterate through the arrays. The example / template in the 
+                    lecture slides shows exactly how to set up the <code>for</code> loop. You can copy the code from the slides but make 
+                    sure you understand it as loops are a very important programming concept. If you're at all unsure, please ask for help.</p>
+                    <p>Before drawing each circle, use <code>fill()</code> to set the fill colour. At least one of the colour channels should use an 
+                    element from the <code>colourVals</code> array. All circles should be drawn at the same location and use the <code>diameters</code> array to 
+                    set the width.</p>
+                    <p>Finally, implement the <code>mouseClicked()</code> event function. The lecture slides show two ways to remove elements from an 
+                    array. One of those two methods does exactly what you need! Save the removed element as a variable then add the variable back to the 
+                    beginning of the array. The lecture slides show three ways to add elements to an array. Choose the most appropriate approach for 
+                    the task.</p>
+                    <p>Some useful documentation:</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_pop.asp" target="_blank"><code>arrayName.pop()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_shift.asp" target="_blank"><code>arrayName.shift()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_push.asp" target="_blank"><code>arrayName.push()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_unshift.asp" target="_blank"><code>arrayName.unshift()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

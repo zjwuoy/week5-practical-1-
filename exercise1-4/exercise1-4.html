@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W5P1 - Exercise 1.4</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/p5.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.4</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>A common use case for arrays is to make it possible to allow users to undo changes they have made. 
+                For example, Google Docs and Photoshop both have undo functionality and your web browser's 
+                back button is another type of undo functionality.
+            </p>
+            <p>Undo functionality can be created by maintaining a history of user actions. To create the history, 
+                each user action is pushed to the end of an array. When the user wants to undo their action, the last 
+                element is popped from the array. Side note: a data structure that adds elements to the end and removes 
+                elements in reverse order is known as a "stack".</p>
+            <p>In this exercise, you will create a (very) simple drawing application that allows the user to undo 
+                their actions. Create a sketch of any size. When the user clicks the mouse add a new point, ellipse, or circle 
+                to the canvas at the mouse coordinates. When the user presses "z", remove the most recent shape.
+            </p>
+            <p>When you are done, check your work using <a href="./check-exercise1-4.html">check-exercise1-4.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="400" controls>
+                    <source src="./assets/exercise1-4.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You will need two empty global array variables. One will store the x coordinates and one will store the y coordinates.</p>
+                    <p>Implement the <code>mouseClicked()</code> event function. When the mouse is clicked, <em>push</em> the mouse x and y coordinates 
+                    to the end of the appropriate arrays.</p>
+                    <p>Implement the <code>keyPressed()</code> event function. When <code>key</code> is "z", <em>pop</em> the last element in each array.</p>
+                    <p>Use the arrays to draw shapes (points, circles, or ellipses) on the canvas at the click locations.</p>
+                    <p>Some useful documentation:</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_push.asp" target="_blank"><code>arrayName.push()</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/jsref_pop.asp" target="_blank"><code>arrayName.pop()</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/key" target="_blank"><code>key</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
